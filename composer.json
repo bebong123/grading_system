@@ -1,0 +1,16 @@
+{
+    "name": "flores/gs",
+    "description": "Basic Student Grading System",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Flores\\Gs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Flores YJ."
+        }
+    ],
+    "require": {}
+}
