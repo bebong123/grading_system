@@ -2,29 +2,46 @@
 namespace Flores\Gs\Models;
 
 use Flores\Gs\Core\Crud;
+use Flores\Gs\Core\Database;
 
-class StudentModel implements Crud {
+class StudentModel extends Database implements Crud {
     public int $id;
     public string $name;
     public string $course;
     public int $year_level;
+    public string $sections;
 
-    public function __construct(int $id,string $name,string $course,int $year_level){
-        $this->id=$id;
-        $this->name=$name;
-        $this->course=$course;
-        $this->year_level=$year_level;
+    public function __construct(){
+        parent:: __construct();
+        $this->id=0;
+        $this->name="";
+        $this->course="";
+        $this->year_level=0;
+        $this->sections="";
+    
+    
     }
     public function create(){
-
+       
     }
+
+
     public function read(){
+        try{
+           $sql = "SELECT * FROM students";
+           $results = $this->conn->query($sql);
+           return $results->fetch_all(MYSQLI_ASSOC);
+
+           }catch (\Throwable $th){
+            echo $th->getMessage();
+        }
 
     }
-    public function update(){
+    public function update($id){
 
+        
     }
-    public function delete(){
+    public function delete($id){
         
     }
 
