@@ -8,7 +8,7 @@ class Database{
     public function __construct(){
 
         $host = 'localhost';
-        $db = 'opp_flores';
+        $db = 'oop_flores';
         $user = 'root';
         $pass = '';
         //mysqli connection
